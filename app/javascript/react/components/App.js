@@ -1,7 +1,15 @@
 import React from 'react'
+import { Router, browserHistory, Route, IndexRoute } from 'react-router';
+import OutfitsShowContainer from '../containers/OutfitsShowContainer'
 
-export const App = (props) => {
-  return (<h1>Make It So React</h1>)
-}
+const App = props => {
+  return (
+<Router history={browserHistory}>
+  <Route path='/outfits/:id' component={OutfitsShowContainer} />
+</Router>
+
+      )
+
+  }
 
 export default App
