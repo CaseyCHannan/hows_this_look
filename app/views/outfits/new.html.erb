@@ -1,0 +1,31 @@
+<div class="log-in-wrapper">
+  <div class="log-in-container">
+  <h1>New Outfits form</h1>
+
+  <%= form_for(@outfit) do |f| %>
+    <div class="field">
+      <%= f.label :style %><br />
+      <%= f.text_field :style %>
+
+    </div>
+    <div class="field">
+      <%= f.label :description %><br />
+      <%= f.text_field :description %>
+    </div>
+    <div class="field">
+      <%= f.label :photo %><br />
+      <%= f.file_field :photo %>
+    <div class="actions">
+    <%= f.submit "Add Outfit", class: "green-button"%>
+  </div>
+
+  <% end %>
+
+  </div>
+</div>
+
+<!-- t.string :style
+t.string :photo
+t.text :description
+
+t.belongs_to :user -->

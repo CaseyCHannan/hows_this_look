@@ -2,15 +2,14 @@ import React, { Component } from 'react'
 
 class OutfitsShowContainer extends Component {
 
-
   constructor(props){
       super(props)
         this.state = {
-          description: "",
-          photo: "",
-          style: "",
-          user_id: 0
-
+           description: "",
+           photo: "",
+           style: "",
+           user_id: 0
+          //
 
         }
   }
@@ -29,10 +28,10 @@ class OutfitsShowContainer extends Component {
     .then(response => response.json())
     .then(body => {
       this.setState({
-        description: body.description,
-        photo: body.photo,
-        style: body.style,
-        user_id: body.user_id
+         description: body.outfit.description,
+         photo: body.outfit.photo.url,
+         style: body.outfit.style,
+         user_id: body.user_id
       })
     })
   }
@@ -43,7 +42,7 @@ class OutfitsShowContainer extends Component {
   return (
     <div>
     {this.state.description}
-    <img src={this.state.photo}/>
+    <img src={this.state.photo.url}/>
     </div>
   )
   }
