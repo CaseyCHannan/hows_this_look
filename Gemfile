@@ -58,3 +58,4 @@ gem 'foundation-rails', '~> 5.0'
 gem 'webpacker', '~> 3.3'
 gem 'faker', group: [:development, :test]
 gem "carrierwave"
+gem "fog"
