@@ -8,6 +8,8 @@
 User.delete_all
 Outfit.delete_all
 
+
+
   12.times do |index|
     # define everything below here
     first_name = Faker::Name.first_name
@@ -15,9 +17,9 @@ Outfit.delete_all
     email = Faker::Internet.safe_email(first_name)
     password = Faker::Internet.password(8, 12)
     banana= User.create(first_name: first_name, last_name: last_name, email: email, password: password)
-    6.times do
+    2.times do
       style = Faker::TvShows::VentureBros.vehicle
-      photo = Faker::Avatar.image
+      photo = Rack::Test::UploadedFile.new(Rails.root.join('app/assets/images/facelesslady.jpeg'), 'image/jpg')
       description = Faker::TvShows::VentureBros.quote
       Outfit.create(style: style, description: description, photo: photo, user_id: banana.id)
     end
