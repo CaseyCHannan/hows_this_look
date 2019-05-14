@@ -4,11 +4,11 @@ class OutfitPhotoUploader < CarrierWave::Uploader::Base
   # include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
-  if Rails.env.test?
     storage :file
-  else
-    storage :fog
-  end
+
+  # else
+  #   storage :fog
+   #end
   # storage :file
 
   # Override the directory where uploaded files will be stored.
@@ -17,9 +17,9 @@ class OutfitPhotoUploader < CarrierWave::Uploader::Base
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
-  def default_url(*args)
-    "https://greenspaces-production.s3.amazonaws.com/default/treeicon-green.png"
-  end
+  # def default_url(*args)
+  #   "https://greenspaces-production.s3.amazonaws.com/default/treeicon-green.png"
+  # end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url(*args)
@@ -43,9 +43,9 @@ class OutfitPhotoUploader < CarrierWave::Uploader::Base
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
-  # def extension_whitelist
-  #   %w(jpg jpeg gif png)
-  # end
+   def extension_whitelist
+     %w(jpg jpeg gif png)
+   end
 
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
