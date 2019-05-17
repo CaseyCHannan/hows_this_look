@@ -5,8 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-User.delete_all
-Outfit.delete_all
+# User.delete_all
+# Outfit.delete_all
 
 
 
@@ -20,6 +20,18 @@ Outfit.delete_all
     2.times do
       style = Faker::TvShows::VentureBros.vehicle
       photo = Rack::Test::UploadedFile.new(Rails.root.join('app/assets/images/facelesslady.jpeg'), 'image/jpg')
+      description = Faker::TvShows::VentureBros.quote
+      Outfit.create(style: style, description: description, photo: photo, user_id: banana.id)
+    end
+    2.times do
+      style = Faker::TvShows::VentureBros.vehicle
+      photo = Rack::Test::UploadedFile.new(Rails.root.join('app/assets/images/closetlady.jpeg'), 'image/jpg')
+      description = Faker::TvShows::VentureBros.quote
+      Outfit.create(style: style, description: description, photo: photo, user_id: banana.id)
+    end
+    2.times do
+      style = Faker::TvShows::VentureBros.vehicle
+      photo = Rack::Test::UploadedFile.new(Rails.root.join('app/assets/images/redsweaterlady.jpeg'), 'image/jpg')
       description = Faker::TvShows::VentureBros.quote
       Outfit.create(style: style, description: description, photo: photo, user_id: banana.id)
     end

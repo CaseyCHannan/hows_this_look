@@ -52,19 +52,15 @@ class UsersShowContainer extends Component {
     // <Link to={`/users/${this.props.params.id}/outfits/new`} ><button id='new-review-button' >Add a new outfit for your friends to see!</button></Link>
 
 
-// <div id='button-div'>
-// <a href={`/users/${this.props.params.id}/outfits/new`} ><button id='new-review-button' >Add a new outfit for your friends to see!</button></a>
-    return (
-      <div>
-
-
-
-
+return (
+  <div>
+    <div id='button-div'>
+    <a href={`/users/${this.props.params.id}/outfits/new`} ><button id='new-review-button' >Add a new outfit for your friends to see!</button></a>
         <h2>
          Welcome back {this.state.user.email}!
         </h2>
         <h4> Your outfits! </h4>
-        <div>
+
         {thisUsersOutfits}
         </div>
       </div>
