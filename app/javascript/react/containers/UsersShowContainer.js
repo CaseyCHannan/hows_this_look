@@ -38,14 +38,14 @@ class UsersShowContainer extends Component {
       debugger
     let thisUsersOutfits = this.state.outfits.map(outfit => {
        return(
-
+         <div className="row">
          <UserOutfitTile
            key={outfit.id}
            photo={outfit.photo.url}
            style={outfit.style}
            description={outfit.description}
           />
-
+          </div>
        )
 
     })

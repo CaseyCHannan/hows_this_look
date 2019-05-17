@@ -16,6 +16,23 @@
 
  */
 
+.user-outfit-show-container {
+  width:100%;
+   text-align:center;
+}
+
+.user-outfit-show-left {
+    float:left;
+    width:100px;
+}
+
+
+.user-outfit-show-right {
+    float:left;
+    width:100px;
+}
+
+
 #new-review-button{
    text-align: right;
    background-color: green;
